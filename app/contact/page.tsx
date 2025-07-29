@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { motion } from 'framer-motion'
+import { AnimatedElement } from '../components/AnimatedElement'
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare, Calendar } from 'lucide-react'
 
 export default function ContactPage() {
@@ -61,12 +61,7 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
+          <AnimatedElement animation="slideUp" className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Get In <span className="text-gradient">Touch</span>
             </h1>
@@ -74,36 +69,28 @@ export default function ContactPage() {
               Ready to transform your business? Let's discuss how our technology solutions 
               can help you achieve your goals and drive growth.
             </p>
-          </motion.div>
+          </AnimatedElement>
         </div>
       </section>
 
       {/* Contact Methods */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <AnimatedElement animation="slideUp" className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Contact <span className="text-gradient">Methods</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Choose the most convenient way to reach us. We're here to help with all your technology needs.
             </p>
-          </motion.div>
+          </AnimatedElement>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactMethods.map((method, index) => (
-              <motion.div
+              <AnimatedElement
                 key={method.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                animation="slideUp"
+                delay={index * 100}
                 className="card text-center"
               >
                 <div className={`w-16 h-16 ${method.color} rounded-lg flex items-center justify-center mx-auto mb-4`}>
@@ -116,7 +103,7 @@ export default function ContactPage() {
                   ))}
                 </div>
                 <p className="text-gray-500 text-sm">{method.description}</p>
-              </motion.div>
+              </AnimatedElement>
             ))}
           </div>
         </div>
@@ -127,13 +114,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="card"
-            >
+            <AnimatedElement animation="slideLeft" className="card">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
               
               <form className="space-y-6">
@@ -281,16 +262,10 @@ export default function ContactPage() {
                   <span>Send Message</span>
                 </button>
               </form>
-            </motion.div>
+            </AnimatedElement>
 
             {/* Additional Information */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
+            <AnimatedElement animation="slideRight" className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Polygon?</h3>
                 <div className="space-y-4">
@@ -360,7 +335,7 @@ export default function ContactPage() {
                   </button>
                 </div>
               </div>
-            </motion.div>
+            </AnimatedElement>
           </div>
         </div>
       </section>

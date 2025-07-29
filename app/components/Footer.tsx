@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { AnimatedElement } from './AnimatedElement'
 import { FacebookIcon, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -39,13 +39,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="lg:col-span-1"
-          >
+          <AnimatedElement animation="slideUp" className="lg:col-span-1">
             <div className="mb-6">
               <Image
                 src="/img/logofoot.png"
@@ -76,15 +70,10 @@ const Footer = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
-          </motion.div>
+          </AnimatedElement>
 
           {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
+          <AnimatedElement animation="slideUp" delay={100}>
             <h4 className="text-lg font-semibold mb-6">Бързи връзки</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -99,15 +88,10 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </AnimatedElement>
 
           {/* Контакти */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          <AnimatedElement animation="slideUp" delay={200}>
             <h4 className="text-lg font-semibold mb-6">Контакти</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
@@ -129,15 +113,10 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </AnimatedElement>
 
           {/* ISO Certification */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
+          <AnimatedElement animation="slideUp" delay={300}>
             <h4 className="text-lg font-semibold">ISO Сертификация</h4>
             <Image
                   src="/img/iso.png"
@@ -148,17 +127,11 @@ const Footer = () => {
                   className="w-auto h-auto pt-6 pl-10"
                   style={{ width: 'auto', height: 'auto' }}
                 />
-          </motion.div>
+          </AnimatedElement>
         </div>
 
         {/* Bottom Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="border-t border-gray-800 mt-12 pt-8"
-        >
+        <AnimatedElement animation="slideUp" delay={400} className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
               © 2025 POLYGONTeam. Всички права запазени.
@@ -169,7 +142,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </AnimatedElement>
       </div>
     </footer>
   )

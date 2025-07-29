@@ -1,35 +1,24 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { AnimatedElement } from './AnimatedElement'
 import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react'
 
 const Contact = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
+        <AnimatedElement animation="slideUp" className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Свържете се с <span className="text-blue-600">нас</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Готови ли сте да оптимизирате вашия бизнес с правилната технология?
           </p>
-        </motion.div>
+        </AnimatedElement>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Left Side - Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <AnimatedElement animation="slideLeft">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Информация за контакти</h3>
             
             <div className="space-y-8 mb-12">
@@ -83,16 +72,10 @@ const Contact = () => {
               <MessageCircle className="h-5 w-5" />
               <span>Изпратете запитване</span>
             </a>
-          </motion.div>
+          </AnimatedElement>
 
           {/* Right Side - Google Maps */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="h-96 lg:h-auto"
-          >
+          <AnimatedElement animation="slideRight" className="h-96 lg:h-auto">
                           <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2914.53623240152!2d25.619465276450512!3d43.07222058981236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a9266d19f47dc1%3A0xdf70ba28de0b428c!2zUE9MWUdPTlRlYW0gbHRkIC0g0J_QntCb0JjQk9Ce0J0g0KLQuNC50Lwg0J7QntCU!5e0!3m2!1sbg!2sbg!4v1753779145444!5m2!1sbg!2sbg&hl=bg"
                 width="100%"
@@ -103,7 +86,7 @@ const Contact = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full min-h-[400px]"
               ></iframe>
-          </motion.div>
+          </AnimatedElement>
         </div>
       </div>
     </section>

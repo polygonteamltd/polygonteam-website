@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { motion } from 'framer-motion'
+import { AnimatedElement } from '../components/AnimatedElement'
 import { 
   Cloud, 
   Shield, 
@@ -170,12 +170,7 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
+          <AnimatedElement animation="slideUp" className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Our <span className="text-gradient">Services</span>
             </h1>
@@ -183,7 +178,7 @@ export default function ServicesPage() {
               Comprehensive technology solutions designed to accelerate your business growth 
               and digital transformation journey.
             </p>
-          </motion.div>
+          </AnimatedElement>
         </div>
       </section>
 
@@ -192,12 +187,10 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <motion.div
+              <AnimatedElement
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                animation="slideUp"
+                delay={index * 100}
                 className="card hover:scale-105 transition-transform duration-300"
               >
                 <div className="flex items-start space-x-4">
@@ -223,7 +216,7 @@ export default function ServicesPage() {
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </AnimatedElement>
             ))}
           </div>
         </div>
@@ -232,29 +225,21 @@ export default function ServicesPage() {
       {/* Process Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <AnimatedElement animation="slideUp" className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Our <span className="text-gradient">Process</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We follow a proven methodology to ensure successful project delivery and maximum value for your business.
             </p>
-          </motion.div>
+          </AnimatedElement>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {process.map((step, index) => (
-              <motion.div
+              <AnimatedElement
                 key={step.step}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                animation="slideUp"
+                delay={index * 100}
                 className="card text-center"
               >
                                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -262,7 +247,7 @@ export default function ServicesPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
-              </motion.div>
+              </AnimatedElement>
             ))}
           </div>
         </div>
@@ -271,13 +256,7 @@ export default function ServicesPage() {
       {/* CTA Section */}
       <section className="py-16 bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center max-w-3xl mx-auto"
-          >
+          <AnimatedElement animation="slideUp" className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Transform Your Business?
             </h2>
@@ -293,7 +272,7 @@ export default function ServicesPage() {
                 Schedule Consultation
               </button>
             </div>
-          </motion.div>
+          </AnimatedElement>
         </div>
       </section>
 

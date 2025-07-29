@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { AnimatedElement } from './AnimatedElement'
 
 const About = () => {
   const features = [
@@ -26,13 +26,7 @@ const About = () => {
       <div className="pt-20 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           {/* Left Column - Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
+          <AnimatedElement animation="slideLeft" className="relative">
             <div>
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 За <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">POLYGONTeam</span>
@@ -51,37 +45,29 @@ const About = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </AnimatedElement>
 
           {/* Right Column - Why Choose Us */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
+          <AnimatedElement animation="slideRight" className="relative">
             <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 rounded-3xl p-10 text-white shadow-2xl">
               <h3 className="text-3xl font-bold mb-6">Какво ни отличава?</h3>
               <div className="space-y-6">
                 {features.map((feature, index) => (
-                  <motion.div 
+                  <AnimatedElement 
                     key={index} 
+                    animation="slideLeft"
+                    delay={index * 100}
                     className="flex items-start space-x-4"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
                   >
                     <div className="w-3 h-3 bg-yellow-400 rounded-full mt-2 flex-shrink-0 shadow-lg"></div>
                     <div>
                       <h4 className="text-lg mb-1">{feature.title}</h4>
                     </div>
-                  </motion.div>
+                  </AnimatedElement>
                 ))}
               </div>
             </div>
-          </motion.div>
+          </AnimatedElement>
         </div>
         
         {/* Bottom Separator */}

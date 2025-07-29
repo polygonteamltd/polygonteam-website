@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { motion } from 'framer-motion'
+import { AnimatedElement } from '../components/AnimatedElement'
 import { Users, Award, Clock, Target, CheckCircle } from 'lucide-react'
 
 export default function AboutPage() {
@@ -94,12 +94,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
+          <AnimatedElement animation="slideUp" className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               About <span className="text-gradient">Polygon</span>
             </h1>
@@ -107,7 +102,7 @@ export default function AboutPage() {
               We are a team of passionate technologists dedicated to helping businesses 
               thrive in the digital age through innovative solutions and expert guidance.
             </p>
-          </motion.div>
+          </AnimatedElement>
         </div>
       </section>
 
@@ -115,12 +110,7 @@ export default function AboutPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
+            <AnimatedElement animation="slideLeft">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Our Mission
               </h2>
@@ -133,21 +123,15 @@ export default function AboutPage() {
                 on understanding your unique challenges and delivering tailored solutions that align 
                 with your business objectives.
               </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
+            </AnimatedElement>
+            <AnimatedElement animation="slideRight" className="relative">
               <div className="w-full h-80 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-2xl flex items-center justify-center">
                 <div className="text-center">
                   <Target className="w-16 h-16 text-primary mx-auto mb-4" />
                   <p className="text-gray-600 font-medium">Our Mission</p>
                 </div>
               </div>
-            </motion.div>
+            </AnimatedElement>
           </div>
         </div>
       </section>
@@ -155,13 +139,7 @@ export default function AboutPage() {
       {/* Values Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <AnimatedElement animation="slideUp" className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Our <span className="text-gradient">Values</span>
             </h2>
@@ -169,16 +147,14 @@ export default function AboutPage() {
               These core values guide everything we do and shape our relationships with clients, 
               partners, and each other.
             </p>
-          </motion.div>
+          </AnimatedElement>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <motion.div
+              <AnimatedElement
                 key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                animation="slideUp"
+                delay={index * 100}
                 className="card text-center"
               >
                                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -186,7 +162,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
                 <p className="text-gray-600">{value.description}</p>
-              </motion.div>
+              </AnimatedElement>
             ))}
           </div>
         </div>
@@ -195,20 +171,14 @@ export default function AboutPage() {
       {/* Timeline Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <AnimatedElement animation="slideUp" className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Our <span className="text-gradient">Journey</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               A decade of innovation, growth, and commitment to excellence in technology solutions.
             </p>
-          </motion.div>
+          </AnimatedElement>
 
           <div className="relative">
             {/* Timeline Line */}
@@ -216,12 +186,10 @@ export default function AboutPage() {
             
             <div className="space-y-12">
               {timeline.map((item, index) => (
-                <motion.div
+                <AnimatedElement
                   key={item.year}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  animation="slideUp"
+                  delay={index * 100}
                   className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}
                 >
                   <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
@@ -236,7 +204,7 @@ export default function AboutPage() {
                                      <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-600 rounded-full border-4 border-white shadow-lg"></div>
                   
                   <div className="w-1/2"></div>
-                </motion.div>
+                </AnimatedElement>
               ))}
             </div>
           </div>
@@ -246,13 +214,7 @@ export default function AboutPage() {
       {/* Team Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
+          <AnimatedElement animation="slideUp" className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Meet Our <span className="text-gradient">Leadership</span>
             </h2>
@@ -260,16 +222,14 @@ export default function AboutPage() {
               Our experienced leadership team brings together decades of expertise in technology, 
               business strategy, and digital transformation.
             </p>
-          </motion.div>
+          </AnimatedElement>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, index) => (
-              <motion.div
+              <AnimatedElement
                 key={member.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                animation="slideUp"
+                delay={index * 100}
                 className="card text-center"
               >
                 <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -278,7 +238,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
                 <p className="text-primary font-medium mb-3">{member.role}</p>
                 <p className="text-gray-600 text-sm">{member.bio}</p>
-              </motion.div>
+              </AnimatedElement>
             ))}
           </div>
         </div>

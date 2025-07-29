@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatedElement } from './AnimatedElement'
 import { X, Cookie } from 'lucide-react'
 
 const CookieConsent = () => {
@@ -26,13 +26,10 @@ const CookieConsent = () => {
   }
 
   return (
-    <AnimatePresence>
+    <>
       {showConsent && (
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 100 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+        <AnimatedElement
+          animation="slideUp"
           className="fixed bottom-0 left-0 right-0 z-50 bg-gray-900 border-t border-gray-700 shadow-2xl"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -74,9 +71,9 @@ const CookieConsent = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </AnimatedElement>
       )}
-    </AnimatePresence>
+    </>
   )
 }
 

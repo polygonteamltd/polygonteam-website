@@ -44,6 +44,9 @@ const config: Config = {
         'fade-in': 'fadeIn 0.6s ease-in-out',
         'slide-up': 'slideUp 0.6s ease-out',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'matrix-rain': 'matrixRain 6s linear infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'gradient': 'gradient 3s ease infinite',
       },
       keyframes: {
         fadeIn: {
