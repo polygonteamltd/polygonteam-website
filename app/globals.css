@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   box-sizing: border-box;
@@ -30,25 +32,6 @@ body {
   --input: #e2e8f0;
   --ring: #3b82f6;
   --radius: 0.5rem;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --radius: var(--radius);
 }
 
 @layer components {
@@ -85,8 +68,6 @@ body {
   .animate-slide-up {
     animation: slideUp 0.6s ease-out;
   }
-
-
 }
 
 @keyframes fadeIn {
@@ -108,8 +89,6 @@ body {
     transform: translateY(0);
   }
 }
-
-
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {

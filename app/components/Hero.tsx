@@ -56,9 +56,9 @@ const Hero = () => {
     { name: 'Python', icon: '/img/icons/icons/python.png' },
     { name: 'PHP', icon: '/img/icons/icons/php.png' },
     { name: 'Laravel', icon: '/img/icons/icons/laravel.png' },
-    { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
     { name: 'PostgreSQL', icon: '/img/icons/icons/postgres.png' },
     { name: 'MariaDB', icon: '/img/icons/icons/mariadb.png' },
+    { name: 'Rust', icon: '/img/icons/icons/rust.png' },
   ]
 
   return (
