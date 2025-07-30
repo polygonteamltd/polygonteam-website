@@ -56,14 +56,16 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/POLYGONTeamltd/"
+                target="_blank"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300"
                 aria-label="Facebook"
               >
                 <FacebookIcon className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://bg.linkedin.com/company/polygonteam-ltd.?trk=public_profile_topcard-current-company"
+                target="_blank"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300"
                 aria-label="LinkedIn"
               >

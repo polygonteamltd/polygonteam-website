@@ -12,7 +12,7 @@ const Contact = () => {
             Свържете се с <span className="text-blue-600">нас</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Готови ли сте да оптимизирате вашия бизнес с правилната технология?
+            Готови ли сте да оптимизирате бизнеса си с правилната технология?
           </p>
         </AnimatedElement>
 
