@@ -142,9 +142,9 @@ const Footer = () => {
               © 2025 POLYGONTeam. Всички права запазени.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
+              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
                 Политика за поверителност
-              </a>
+              </Link>
             </div>
           </div>
         </AnimatedElement>
