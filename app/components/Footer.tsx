@@ -117,16 +117,21 @@ const Footer = () => {
 
           {/* ISO Certification */}
           <AnimatedElement animation="slideUp" delay={300}>
-            <h4 className="text-lg font-semibold">ISO Сертификация</h4>
-            <Image
-                  src="/img/iso.png"
-                  alt="ISO 9001:2015"
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  className="w-auto h-auto pt-6 pl-10"
-                  style={{ width: 'auto', height: 'auto' }}
-                />
+            <h4 className="text-lg font-semibold mb-6">ISO Сертификация</h4>
+            <div className="flex justify-center lg:justify-start">
+              <Image
+                src="/img/iso.png"
+                alt="ISO 9001:2015"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="w-auto h-auto"
+                style={{ width: 'auto', height: 'auto' }}
+              />
+            </div>
+            <p className="text-gray-400 text-sm mt-3 text-center lg:text-left">
+              ISO 9001:2015 Сертифициран
+            </p>
           </AnimatedElement>
         </div>
 

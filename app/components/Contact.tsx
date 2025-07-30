@@ -61,7 +61,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Работно време</h4>
-                  <p className="text-gray-600">Понеделник - Петък: 10:00 - 17:00</p>
+                  <p className="text-gray-600">Понеделник - Петък: 09:00 - 17:00</p>
                   <p className="text-gray-600">Събота - Неделя: Почивен ден</p>
                 </div>
               </div>
