@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
 import CookieConsent from './components/CookieConsent'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -56,6 +57,7 @@ export default function RootLayout({
       <body className={`${montserrat.className} antialiased`}>
         {children}
         <CookieConsent />
+        <SpeedInsights />
       </body>
     </html>
   )
