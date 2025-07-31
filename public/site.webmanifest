@@ -1,0 +1,21 @@
+{
+  "name": "POLYGONTeam - IT Solutions",
+  "short_name": "POLYGONTeam",
+  "description": "IT компания с над 10 години опит в разработването на индивидуални софтуерни решения, автоматизация на бизнес процеси и внедряване на сградни автоматизации",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 
