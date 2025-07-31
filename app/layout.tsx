@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import './globals.css'
 import CookieConsent from './components/CookieConsent'
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/next';
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -58,6 +59,7 @@ export default function RootLayout({
         {children}
         <CookieConsent />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   )
