@@ -8,6 +8,8 @@ import { Analytics } from '@vercel/analytics/next';
 const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  // Update this URL to your production domain if different
+  metadataBase: new URL('https://polygonteam.com'),
   title: 'POLYGONTeam ltd - Solutions for everyone',
   description: 'POLYGONTeam Ltd. е IT компания с над 10 години опит в разработването на индивидуални софтуерни решения, автоматизация на бизнес процеси и внедряване на сградни автоматизации.',
   keywords: 'POLYGONTeam, IT solutions, software development, business process automation, building automation, custom software, individual approach, long-term partnerships, security, maintenance, sustainable growth, Bulgaria, Veliko Tarnovo, programming, robotics, engineering, embedded systems, mobile apps, web development, database, API, integration, optimization, digital transformation, smart buildings, IoT, automation, software consulting, technical expertise, project management, quality assurance, support services, програмиране, софтуерни решения, автоматизация на бизнес процеси, сградни автоматизации, индивидуални решения, дългосрочни партньорства, сигурност, поддръжка, устойчив растеж, България, Велико Търново, роботика, инженерство, вградени системи, мобилни приложения, уеб разработка, база данни, интеграция, оптимизация, дигитална трансформация, умни сгради, интернет на нещата, автоматизация, софтуерно консултиране, техническа експертиза, управление на проекти, осигуряване на качество, поддържащи услуги',

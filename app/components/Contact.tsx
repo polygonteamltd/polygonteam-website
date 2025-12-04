@@ -29,7 +29,6 @@ const Contact = () => {
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Имейл</h4>
                   <p className="text-gray-600">polygonteamltd@gmail.com</p>
-                  <p className="text-gray-600">hi@polygonteam.com</p>
                 </div>
               </div>
 
